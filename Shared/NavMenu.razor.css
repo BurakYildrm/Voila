@@ -1,0 +1,70 @@
+.oi {
+    width: 2rem;
+    font-size: 1.6rem;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+::deep a {
+    color: hsl(0, 0%, 15%);
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+}
+
+.solid {
+    display: none;
+}
+
+.navmenu-item:hover > .outline {
+    display: none;
+}
+
+.navmenu-item:hover > .solid {
+    display: block;
+    color: hsl(0, 0%, 20%);
+}
+
+.navmenu-item:focus > .outline {
+    display: none;
+}
+
+.navmenu-item:focus > .solid {
+    display: block;
+}
+
+::deep .navmenu-item {
+    position: relative;
+}
+
+::deep .navmenu-item::before {
+    content: "";
+    margin-left: calc(calc(1rem + 5px) * -1);
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: red;
+    z-index: 1;
+    border-top-right-radius: 70%;
+    border-bottom-right-radius: 70%;
+}
+
+
+@media (min-width: 641px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    .collapse {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}

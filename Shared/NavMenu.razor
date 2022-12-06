@@ -1,0 +1,70 @@
+﻿@*<div class="top-row ps-3 navbar navbar-dark">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="">Voila</a>
+		<button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+	<nav class="flex-column">
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+				<span class="oi oi-home" aria-hidden="true"></span> Home
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="counter">
+				<span class="oi oi-plus" aria-hidden="true"></span> Counter
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="fetchdata">
+				<span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+			</NavLink>
+		</div>
+	</nav>
+</div>*@
+
+<div class="d-flex flex-column p-3 w-100 h-100">
+	<iconify-icon icon="material-symbols:logo-dev" class="oi"></iconify-icon>
+	<div class="d-flex flex-column flex-grow-1 flex-shrink-1 justify-content-center gap-5">
+		<NavLink href="" Match="NavLinkMatch.All" class="navmenu-item">
+			<iconify-icon icon="mingcute:home-1-line" class="oi outline"></iconify-icon>
+			<iconify-icon icon="mingcute:home-1-fill" class="oi solid"></iconify-icon>
+		</NavLink>
+		<NavLink href="counter" class="navmenu-item">
+			<iconify-icon icon="teenyicons:bag-outline" class="oi outline"></iconify-icon>
+			<iconify-icon icon="teenyicons:bag-solid" class="oi solid"></iconify-icon>
+		</NavLink>
+		<NavLink href="fetchdata" class="navmenu-item">
+			<iconify-icon icon="mdi:heart-outline" class="oi outline"></iconify-icon>
+			<iconify-icon icon="mdi:heart" class="oi solid"></iconify-icon>
+		</NavLink>
+	</div>
+	<NavLink href="" class="navmenu-item">
+		<iconify-icon icon="ph:gear-six-bold" class="oi outline"></iconify-icon>
+		<iconify-icon icon="ph:gear-six-fill" class="oi solid"></iconify-icon>
+	</NavLink>
+</div>
+
+@code {
+	//private bool collapseNavMenu = true;
+
+	//private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+	//private void ToggleNavMenu()
+	//{
+	//	collapseNavMenu = !collapseNavMenu;
+	//}
+
+	private bool toggleSolidIcons = false;
+	private string showSolidIcons => toggleSolidIcons ? "show" : "hide";
+	private string hideOutlineIcons => toggleSolidIcons ? "hide" : "show";
+
+	private void Toggle()
+	{
+		toggleSolidIcons = !toggleSolidIcons;
+	}
+}

@@ -1,0 +1,51 @@
+*, *::before *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.navmenu {
+    height: 100vh;
+    background: rgba(255, 0, 0, 0.4);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+@media (max-width: 640.98px) {
+}
+
+@media (min-width: 641px) {
+    .page {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row, article {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
